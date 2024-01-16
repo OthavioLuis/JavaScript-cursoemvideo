@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeroporto</title>
+</head>
+<body>
+    <h1>Sistema de Identificação</h1>
+    Nacionalidade: <input placeholder="Ex: BR" type="text" name="txt" id="txt">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        function verificar() {
+            var txt = document.querySelector('input#txt')
+            var res = document.querySelector('div#res')
+            var verif = (txt.value)
+            res.innerHTML = `Sua nacionalidade é <strong>${verif}</strong>.`
+            if (verif == 'BR' || verif == 'Br' || verif == 'br' || verif == 'Brasil' || verif == 'brasil' || verif == 'brasileiro' || verif == 'Brasileiro')  {
+                res.innerHTML += `<p>Você é da Casa!</p>`
+            } else {
+                res.innerHTML += `<p>Você é Estrangeiro!</p>`
+            }
+            res.innerHTML += `<p>Não esqueça os Documentos.</p>`
+        }
+    </script>
+</body>
+</html>
